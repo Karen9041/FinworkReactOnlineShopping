@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
-}
+@import '~antd/dist/antd.css';
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-self: center;
+  margin: auto;
+}
+
+/* general */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #46fff6;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.layout-header,
+.layout-footer {
+  padding: 0;
+  height: auto;
+  line-height: 1.6;
+  color: #ffffff;
+  background-color: black;
+}
+
+.layout-content {
+  background-color: #ffffff;
+}
+
+/* Header */
+.header{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+.header-right {
+  position: absolute;
+  right: 1rem;
+  top:1rem;
+}
+
+.header-left {
+  position: absolute;
+  left: 1rem;
+  top:1rem;
+}
+
+/* Introduction */
+.Intro{
+  width: 100%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Intro-block {
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.block1{
+  background-image: url(https://hinetcdn.waca.ec/uploads/shops/16576/skins/12/129d60d4c8f1bb410cfe9578b4342482.jpg);
+}
+
+.block2{
+  background-image: url("./img/background-a.jpg");
+}
+
+.block3{
+  background-image: url("./img/background-b.jpg");
+}
+
+.block4{
+  background-image: url("./img/background-a.jpg");
+}
+
+.block5{
+  background-image: url("./img/background-b.jpg");
 }
