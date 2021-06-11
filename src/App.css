@@ -6,12 +6,22 @@
   align-self: center;
   margin: auto;
 }
+/* globle-setting */
+h1{
+  font-size: 40px;
+}
 
+h3{
+  font-size: 30px;
+}
+
+p{
+  font-size: 23px;
+}
 /* general */
 body {
   font-size: 16px;
   line-height: 1.6;
-  background-color: #46fff6;
 }
 
 .container-fluid {
@@ -36,7 +46,7 @@ body {
 /* Header */
 .header{
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
   position: relative;
 }
 .header-right {
@@ -50,11 +60,14 @@ body {
   left: 1rem;
   top:1rem;
 }
-
-/* Introduction */
+.header-button{
+  height: 3rem;
+  width: 3rem;
+  margin: 5px;
+}
+/* Introduction-basicsetting */
 .Intro{
   width: 100%;
-  color: white;
 }
 
 .Intro-block {
@@ -63,6 +76,11 @@ body {
 
 .block1{
   background-image: url(https://hinetcdn.waca.ec/uploads/shops/16576/skins/12/129d60d4c8f1bb410cfe9578b4342482.jpg);
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: top -15rem center;
+  text-align: center;
+  height: 110vh;
 }
 
 .block2{
@@ -75,8 +93,118 @@ body {
 
 .block4{
   background-image: url("./img/background-a.jpg");
+  height: 100vh;
 }
 
 .block5{
   background-image: url("./img/background-b.jpg");
+}
+
+.Intro-selfie-a{
+  background-image: url("./img/selfie-a.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Intro-selfie-b{
+  background-image: url("./img/selfie-b.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.Intro-selfie-c{
+  background-image: url("./img/selfie-c.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Intro-selfie-d{
+  background-image: url("./img/selfie-d.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Introduction-content */
+.Intro-LOGO{
+  width: 153px;
+  height: 153px;
+  margin-top: 20vh;
+  border: 2px  solid rgb(255, 255, 255) ;
+  margin-bottom: 2rem;
+}
+
+.Intro-Button{
+  width: 20rem;
+  height: 5rem;
+  font-size: 30px;
+  margin-top: 3rem;
+}
+.Intro-info{
+  margin-top: 30px;
+}
+
+.Intro-name{
+  color: white;
+  font-size: 40px;
+}
+
+.Intro-slogan{
+  color: white;
+  font-size: 30px;
+}
+
+.Intro-text{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.Intro-text-title-a{
+  background-image: url("./img/ribbon-1.png");
+  background-repeat: no-repeat;
+  background-position: left -10rem center;
+  height: 60px;
+  width: 200%;
+  color: #3a2424;
+}
+
+.Intro-text-title-b{
+  background-image: url("./img/ribbon-2.png");
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 100%;
+  color: #3a2424;
+}
+
+.Intro-text-title-c{
+  background-image: url("./img/ribbon-1.png");
+  background-repeat: no-repeat;
+  background-position: left -10rem center;
+  height: 50px;
+  width: 200%;
+  color: #3a2424;
+}
+
+.Intro-text-title-d{
+  background-image: url("./img/ribbon-3.png");
+  background-repeat: no-repeat;
+  background-position:center;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  color: #3a2424;
+}
+
+/* Footer */
+
+.footer{
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+  text-align: center;
 }
