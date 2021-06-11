@@ -1,4 +1,4 @@
-import NavBar from "./NavBar";
+// import NavBar from "./NavBar";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
