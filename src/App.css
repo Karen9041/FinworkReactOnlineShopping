@@ -168,9 +168,9 @@ body {
 .Intro-text-title-a{
   background-image: url("./img/ribbon-1.png");
   background-repeat: no-repeat;
-  background-position: left -10rem center;
+  background-position: left -14rem center;
   height: 60px;
-  width: 200%;
+  width: 100%;
   color: #3a2424;
 }
 
@@ -207,4 +207,28 @@ body {
   margin-top: 4rem;
   margin-bottom: 6rem;
   text-align: center;
+}
+
+/* ProductList */
+.Plist{
+  background-color: #171717;
+  padding-top: 4rem ;
+  padding-bottom: 6rem;
+}
+.Plist-title{
+  text-align: center;
+  color: white;
+  padding-bottom: 2rem;
+}
+.Plist-row{
+  padding:0 16rem;
+}
+
+/* ProductItem */
+.product{
+  padding: 0;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: rgb(0, 0, 0) solid 1px;
 }

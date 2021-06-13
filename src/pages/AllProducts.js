@@ -1,23 +1,20 @@
 import { Layout } from 'antd';
 import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
-import AppIntrofuction from "../components/Introduction"
-
-// import ProductList from "../components/ProductList";
-// import products from "../json/products.json";
+import ProductList from "../components/ProductList";
+import products from "../json/products.json";
 
 const { Header, Content, Footer } = Layout;
 
 
-
-function ProductPage() {
+function AllProducts() {
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">
         <AppHeader/>
       </Header>
       <Content className="layout-content">
-        <AppIntrofuction/>
+        <ProductList products={products} />
       </Content>
       <Footer className="layout-footer">
         <AppFooter/>  
@@ -26,4 +23,4 @@ function ProductPage() {
   );
 }
 
-export default Home;
+export default AllProducts;

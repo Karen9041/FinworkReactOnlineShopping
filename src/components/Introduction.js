@@ -1,6 +1,7 @@
 import { Row, Col } from "antd";
 import LOGO from '../img/logo.jpg'
 import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 export default function Introduction() {
     return (
@@ -19,13 +20,14 @@ export default function Introduction() {
                         我是黃郁倫，我只做好貨
                     </h3>
                 </div>
-                <Button 
-                    className="Intro-Button"
-                    ghost
-                    src=""
-                    >
-                    全部商品
-                </Button>
+                <Link to={`/AllProducts`} className="product-link">
+                    <Button 
+                        className="Intro-Button"
+                        ghost
+                        >
+                        全部商品
+                    </Button>
+                </Link>
             </div>
             <div className="Intro-block block2">
                 <Row>
@@ -68,12 +70,11 @@ export default function Introduction() {
                             <h3 className="Intro-text-title-b">
                                 黑貓運送蛋糕時的保護措施
                             </h3>
-                            <h3>&nbsp;</h3>
+                            <br></br>
                             <p>
                                 就像照片你看到的這樣，漂亮的包裝加上綁好緞帶，直接送到你<br/>
                                 手上，看起來很不可思議，但是因為我做過無數次的實驗。
                             </p>
-                            <h3>&nbsp;</h3>
                             <p>
                                 外箱的厚版設計，還有內箱塞了防撞和吸震包材，可以把蛋糕保<br/>
                                 護的很好，然後由黑貓宅配安全送到你手上，這件事你可以放心<br/>
@@ -83,12 +84,11 @@ export default function Introduction() {
                             <h3 className="Intro-text-title-b">
                                 如何讓你的冰箱冰的下收到的蛋糕
                             </h3>
-                            <h3>&nbsp;</h3>
+                            <br></br>
                             <p>
                                 綁上緞帶的這整個黑色盒子，尺寸為長24cmx寬24cmx高25cm，<br/>
                                 而裡面的蛋糕有用透明防撞內盒裝，大約為6吋大。
                             </p>
-                            <h3>&nbsp;</h3>
                             <p>
                                 所以你收到之後，可以先拆開綁上緞帶的這整個黑色盒子，只冰<br/>
                                 透明防撞內盒，這樣就可以解決冰箱冰不下的問題，然後等真正<br/>
@@ -106,7 +106,7 @@ export default function Introduction() {
                             <h3 className="Intro-text-title-c">
                                 蛋糕使用的原料
                             </h3>
-                            <h3>&nbsp;</h3>
+                            <br></br>
                             <p>
                                 水果都有季節性，例如 : 愛文芒果、荔枝、水蜜桃等等，<br/>
                                 時間到了，就會停止接單，等到這些水果在隔年最好吃<br/>
@@ -119,11 +119,10 @@ export default function Introduction() {
                             <h3 className="Intro-text-title-c">
                                 關於蛋糕的價錢
                             </h3>
-                            <h3>&nbsp;</h3>
+                            <br></br>
                             <p>
                                 所有蛋糕和點心，都不會降價，也沒有特賣優惠。
                             </p>
-                            <h3>&nbsp;</h3>
                             <p>
                                 原因就是我都買好的原料來做蛋糕（蛋糕內頁有寫使<br/>
                                 用的原料牌子），所以整個蛋糕價格相對就會高，也<br/>
@@ -149,7 +148,7 @@ export default function Introduction() {
                             <h3 className="Intro-text-title-d">
                                 &nbsp;我給你的承諾
                             </h3>
-                            <h3>&nbsp;</h3>
+                            <br></br>
                             <p>
                                 你會買我的蛋糕來送人或是慶祝，那個人在你心中一定是<br/>
                                 很重要的人，光憑這一點，我保證繃緊神經，讓自己處於<br/>
@@ -157,7 +156,7 @@ export default function Introduction() {
                                 人名譽，也代表我對你的重視。
                             </p>
                             <br></br>
-                            <p>&nbsp;</p>
+                            <br></br>
                             <h3 >
                                 &nbsp;最後，謝謝你喜歡我的作品，我也很喜歡。
                             </h3>
