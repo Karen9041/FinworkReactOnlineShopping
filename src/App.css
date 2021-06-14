@@ -232,3 +232,90 @@ body {
   color: white;
   border: rgb(0, 0, 0) solid 1px;
 }
+
+/* ProductDetail */
+.PDetail{
+  background-color: rgb(0, 0, 0);
+  padding: 0 14vw;
+}
+.Pdetail-row{
+  padding:1rem 0;
+  margin: 0 ;
+  background-color: rgb(0, 0, 0);
+  width: 72vw;
+}
+
+.product-image{
+  width: 100%;
+}
+
+.product-info--detail{
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 6rem 4rem;
+}
+
+.product-name{
+  margin-top: -2rem;
+}
+
+.product-price{
+  text-align: right;
+  color: #942D26;
+}
+
+.product-reminder{
+  margin-left: 1rem;
+}
+
+.product-reminder--underline , .product-qty--underline{
+  text-decoration: underline;
+}
+
+.product-qty{
+  margin-left: 1rem;
+}
+
+.product-qty--input{
+  width: 10rem;
+  height: 3rem;
+  font-size: 30px;
+}
+
+/* ProductDetail-Inreoduction */
+.PDetail-Description--a{
+  background-image: url("./img/background-a.jpg");
+  width: 100%;
+}
+.PDetail-Description--b{
+  background-image: url("./img/background-b.jpg");
+  width: 100%;
+}
+
+.PDetail-Description--title{
+  background-image: url("./img/ribbon-1.png");
+  background-repeat: no-repeat;
+  background-position: left -30rem center;
+  height: 60px;
+  width: 100%;
+  color: #3a2424;
+  padding-left: 4rem;
+  padding-top: 15px;
+  margin-top: 2rem;
+}
+
+.PDetail-Description--textA{
+  padding: 2rem 6rem;
+}
+
+.PDetail-Description--textB{
+  padding: 2rem 10rem;
+}
+
+.PDetail-Description--notification{
+  color:#942D26;
+}
+
+.PDetail-Description--notitext{
+  padding: 0 5rem;
+}

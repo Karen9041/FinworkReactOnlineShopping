@@ -3,9 +3,6 @@ import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
 import AppIntrofuction from "../components/Introduction"
 
-// import ProductList from "../components/ProductList";
-// import products from "../json/products.json";
-
 const { Header, Content, Footer } = Layout;
 
 
