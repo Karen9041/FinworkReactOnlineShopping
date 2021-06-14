@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Row, Col } from "antd";
-import { Select } from 'antd';
 import { InputNumber } from "antd";
 // import AddToCart from "./AddToCart"
 
