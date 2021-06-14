@@ -4,7 +4,6 @@ import { Select } from 'antd';
 import { InputNumber } from "antd";
 // import AddToCart from "./AddToCart"
 
-const { Option } = Select;
 
 function ProductDetail({ product }) {
    const [qty, setQty] = useState(product.countInStock > 0 ? 1 : 0);
