@@ -1,29 +1,52 @@
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import { SidebarData } from './SidebarData.js';
+import { IconContext } from 'react-icons';
+import { Button } from 'antd';
 
-export default function NavBar() {
-    return (
-        <div className="nav-bar">
-            <NavLink to="/" className="nav-item" activeClassName="nav-item--active">
-                首頁
-            </NavLink>
-            <NavLink to="/" className="nav-item" activeClassName="nav-item--active">
-                全部商品
-            </NavLink>
-            <NavLink to="/" className="nav-item" activeClassName="nav-item--active">
-                售後服務
-            </NavLink>
-            <NavLink to="/" className="nav-item" activeClassName="nav-item--active">
-                訂購流程
-            </NavLink>
-            <NavLink to="/" className="nav-item" activeClassName="nav-item--active">
-                訂單流程
-            </NavLink>
-            <NavLink to="/" className="nav-item" activeClassName="nav-item--active">
-                隱私權條款
-            </NavLink>
-            <NavLink to="/" className="nav-item" activeClassName="nav-item--active">
-                我要詢問
-            </NavLink>
+function Navbar() {
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
+
+  return (
+    <div className='Navbar'>
+        <div className='navbar'>
+          <Link to='#' >
+            <Button 
+                className="header-button"
+                type="link" 
+                onClick={showSidebar}
+                icon={<FaIcons.FaBars 
+                size="100%" /> }/>
+          </Link>
         </div>
-    );
+        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+          <ul className='nav-menu-items' onClick={showSidebar}>
+            <li className='navbar-toggle'>
+              <Link to='#' className='menu-close'>
+                <Button 
+                    className="header-button"
+                    type="link" 
+                    icon={<AiIcons.AiOutlineClose 
+                    size="100%" /> }/>
+              </Link>
+            </li>
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+    </div>
+  );
 }
+
+export default Navbar;

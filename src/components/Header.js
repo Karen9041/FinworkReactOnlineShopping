@@ -1,9 +1,8 @@
-// import NavBar from "./NavBar";
+import NavBar from "./NavBar";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { FaBars } from "react-icons/fa";
 import { Button } from 'antd';
 
 
@@ -13,11 +12,7 @@ export default function Header() {
        
        <div className="header">
             <div className="header-left">
-                <Button 
-                    className="header-button"
-                    type="link" 
-                    icon={<FaBars 
-                    size="100%" /> }/>
+                <NavBar />
             </div>
             <div className="header-right">
                 <Button 
@@ -43,7 +38,6 @@ export default function Header() {
                     icon={<AiOutlineShoppingCart 
                     size="100%" /> }/>
             </div>
-            {/* <NavBar /> */}
         </div>
     );
 }
