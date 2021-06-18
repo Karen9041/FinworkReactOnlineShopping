@@ -2,7 +2,7 @@ import NavBar from "./NavBar";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import CartSummary from "./CartSummary";
 import { Button } from 'antd';
 
 
@@ -35,8 +35,14 @@ export default function Header() {
                 <Button 
                     className="header-button"
                     type="link" 
+                >
+                <CartSummary />
+                </Button>
+                {/* <Button 
+                    className="header-button"
+                    type="link" 
                     icon={<AiOutlineShoppingCart 
-                    size="100%" /> }/>
+                    size="100%" /> }/> */}
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Row, Col } from "antd";
 import { InputNumber } from "antd";
-// import AddToCart from "./AddToCart"
+import AddToCart from "./AddToCart"
 
 
 function ProductDetail({ product }) {
@@ -63,8 +63,10 @@ function ProductDetail({ product }) {
                            console.log(`After setQty, qty = ${qty}`)
                         }}
                      />
-                  </div>
-                  {/* <AddToCart product={product} qty={qty} /> */}                                
+                  </div>       
+                  <div className="product-button">
+                     <AddToCart product={product} qty={qty} />   
+                  </div>         
                </div>
             </Col>
          </Row>

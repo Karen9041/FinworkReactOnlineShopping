@@ -44,16 +44,16 @@ export default function Introduction() {
                                 1. 黑貓運送蛋糕時的保護措施
                             </h3>
                             <h3>
-                                &nbsp; 2. 如何讓你的冰箱冰的下收到的蛋糕
+                                2. 如何讓你的冰箱冰的下收到的蛋糕
                             </h3>
                             <h3>
-                                &nbsp;&nbsp;&nbsp; 3. 蛋糕使用的原料
+                                3. 蛋糕使用的原料
                             </h3>
                             <h3>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. 關於蛋糕的價錢
+                                4. 關於蛋糕的價錢
                             </h3>
                             <h3>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. 我給你的承諾
+                                5. 我給你的承諾
                             </h3>
                         </div>
                     </Col>
@@ -67,7 +67,7 @@ export default function Introduction() {
                     </Col>
                     <Col flex={3} className="Intro-text">
                         <div className="Intro-text-b">
-                            <h3 className="Intro-text-title-b">
+                            <h3 className="Intro-text-title-b1">
                                 黑貓運送蛋糕時的保護措施
                             </h3>
                             <br></br>
@@ -81,7 +81,7 @@ export default function Introduction() {
                                 交給我。
                             </p>
                             <br></br>
-                            <h3 className="Intro-text-title-b">
+                            <h3 className="Intro-text-title-b2">
                                 如何讓你的冰箱冰的下收到的蛋糕
                             </h3>
                             <br></br>
@@ -103,7 +103,7 @@ export default function Introduction() {
                 <Row>
                     <Col flex={4} className="Intro-text">
                          <div className="Intro-text-c">
-                            <h3 className="Intro-text-title-c">
+                            <h3 className="Intro-text-title-c1">
                                 蛋糕使用的原料
                             </h3>
                             <br></br>
@@ -116,7 +116,7 @@ export default function Introduction() {
                                 味的狀態。
                             </p>
                             <br></br>
-                            <h3 className="Intro-text-title-c">
+                            <h3 className="Intro-text-title-c2">
                                 關於蛋糕的價錢
                             </h3>
                             <br></br>
@@ -146,7 +146,7 @@ export default function Introduction() {
                     <Col flex={3} className="Intro-text">
                         <div className="Intro-text-c">
                             <h3 className="Intro-text-title-d">
-                                &nbsp;我給你的承諾
+                                我給你的承諾
                             </h3>
                             <br></br>
                             <p>

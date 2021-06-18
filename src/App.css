@@ -67,6 +67,57 @@ body {
   width: 3rem;
   margin: 5px;
 }
+.header-shopping{
+  height: 2.8rem;
+  width: 2.8rem;
+  margin-left: -20px;
+  color: white;
+}
+
+/* Cart */
+.cart{
+  background-image: url(./img/background-c.png);
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: .1rem #c0c0c0 solid;
+}
+
+.cart-image img{
+  max-width: 4rem;
+  max-height: 4rem;
+  flex: 1 1;
+}
+
+.cart-item-content {
+  margin-left: 2rem;
+  flex: 8 1;
+}
+
+.cart-price {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+.cart-item-delete {
+  font-size: 1.2rem;
+  opacity: 0.6;
+  text-align: right;
+  cursor: pointer;
+}
+
+.cart-total-price-wrap {display: flex; justify-content: space-between;}
+.cart-total-price {
+  font-weight: bold;
+  text-align: right;
+}
+
 /* Introduction-basicsetting */
 .Intro{
   width: 100%;
@@ -168,28 +219,52 @@ body {
 }
 
 .Intro-text-title-a{
-  background-image: url("./img/ribbon-1.png");
+  background-image: url("./img/ribbon-name.png");
   background-repeat: no-repeat;
-  background-position: left -14rem center;
+  background-position:center;
+  text-align: center;
   height: 60px;
   width: 100%;
   color: #3a2424;
 }
 
-.Intro-text-title-b{
-  background-image: url("./img/ribbon-2.png");
+.Intro-text-title-b1{
+  background-image: url("./img/ribbon-blackcat.png");
   background-repeat: no-repeat;
-  height: 60px;
-  width: 100%;
-  color: #3a2424;
-}
-
-.Intro-text-title-c{
-  background-image: url("./img/ribbon-1.png");
-  background-repeat: no-repeat;
-  background-position: left -10rem center;
+  background-position:center;
+  text-align: center;
   height: 50px;
-  width: 200%;
+  width: 100%;
+  color: #3a2424;
+}
+
+.Intro-text-title-b2{
+  background-image: url("./img/ribbon-ice.png");
+  background-repeat: no-repeat;
+  background-position:center;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  color: #3a2424;
+}
+
+.Intro-text-title-c1{
+  background-image: url("./img/ribbon-ingredient.png");
+  background-repeat: no-repeat;
+  background-position:center;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  color: #3a2424;
+}
+
+.Intro-text-title-c2{
+  background-image: url("./img/ribbon-price.png");
+  background-repeat: no-repeat;
+  background-position:center;
+  text-align: center;
+  height: 50px;
+  width: 100%;
   color: #3a2424;
 }
 
@@ -253,7 +328,7 @@ body {
 
 .product-info--detail{
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-image: url("./img/background-c.png");
   padding: 6rem 4rem;
 }
 
@@ -284,6 +359,19 @@ body {
   font-size: 30px;
 }
 
+.product-button{
+  margin-top: 5rem;
+}
+
+.btn-tocar{
+  width: 10rem;
+  height: 4rem;
+  padding-top: 1rem;
+  background-color: #FFA858;
+  border: none;
+  border-radius: 5px;
+  color: black;
+}
 /* ProductDetail-Inreoduction */
 .PDetail-Description--a{
   background-image: url("./img/background-a.jpg");

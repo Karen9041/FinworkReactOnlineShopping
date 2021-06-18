@@ -3,11 +3,14 @@ import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
 import ProductList from "../components/ProductList";
 import products from "../json/products.json";
+import { useContext } from "react";
+import { StoreContext } from "../store"
 
 const { Header, Content, Footer } = Layout;
 
 
 function AllProducts() {
+  const { state: { page: { products } } } = useContext(StoreContext);
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">
