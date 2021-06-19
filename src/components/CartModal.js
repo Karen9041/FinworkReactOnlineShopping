@@ -1,35 +1,21 @@
 import { Modal, Button, InputNumber } from "antd";
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { StoreContext } from "../store"
-import { ADD_CART_ITEM, REMOVE_CART_ITEM } from "./utils/constants";
-
+import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 
 export default function CartModal({ isModalVisible, toggleModal }) {
    const { state: { cartItems }, dispatch } = useContext(StoreContext);
    const handleCancel = () => toggleModal(!isModalVisible);
-   const addToCart = (product, qty) => {
-      dispatch({
-         type: ADD_CART_ITEM,
-         payload: {
-            id: product.id,
-            name: product.name,
-            image: product.image,
-            price: product.price,
-            countInStock: product.countInStock,
-            qty,
-         },
-      });
-   };
-
-   const removeFromCart = (productId) => {
-      dispatch({ type: REMOVE_CART_ITEM, payload: productId });
-   };
-
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
          : 0;
    }
+
+   useEffect(() => {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+   }, [cartItems])
 
    return (
       <Modal
@@ -46,29 +32,34 @@ export default function CartModal({ isModalVisible, toggleModal }) {
          ) : (
             cartItems.map(item => (
                <li key={item.id} className="cart-item">
-                  <div className="cart-image">
-                     <img src={item.image} alt={item.name} />
-                  </div>
-                  <div className="cart-item-content">
-                     <div className="cart-name">
-                        <p>{item.name}</p>
+                  <Link to={`/product/${item.id}`}>
+                     <div className="cart-image" onClick={()=>{
+                        setProductDetail(dispatch, item.id, item.qty);
+                        handleCancel();
+                     }}>
+                        <img src={item.image} alt={item.name} />
                      </div>
+                  </Link>
+                  <div className="cart-item-content">
+                     <div className="cart-name">{item.name}</div>
                      <div className="cart-product-qty">
                         數量：
                         <InputNumber
                         className="select-style"
-                        max={item.countInStock} 
                         defaultValue={item.qty}
-                        onChange={(val) => addToCart(item, val)
+                        value={item.qty}
+                        min={1}
+                        onChange={(qty) => addCartItem(dispatch, item, qty)
                         }
-                     />
+                     >
+                     </InputNumber>
                      </div>
                   </div>
                   <div className="cart-item-end">
                      <div className="cart-price">
                         ${item.price * item.qty}    
                      </div>
-                     <div className="cart-item-delete" onClick={()=>removeFromCart(item.id)}>
+                     <div className="cart-item-delete" onClick={()=>removeCartItem(dispatch, item.id)}>
                         x
                      </div>
                   </div>
