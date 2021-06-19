@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { Row, Col } from "antd";
 import { InputNumber } from "antd";
 import AddToCart from "./AddToCart"
+import { StoreContext } from "../store"
+import { setProductDetail } from "../actions";
 
 
-function ProductDetail({ product }) {
-   const [qty, setQty] = useState(product.countInStock > 0 ? 1 : 0);
-
-   useEffect(()=>{
-      console.log(`In useEffect, qty = ${qty}`)
-   }, [qty])
+function ProductDetail( ) {
+   const { state: { productDetail: { product, qty} }, dispatch } = useContext(StoreContext);
 
    return (
       <div className="PDetail">
@@ -54,18 +52,14 @@ function ProductDetail({ product }) {
                      </h3>
                      <InputNumber
                         className="product-qty--input"
-                        min={1} 
+                        defaultValue={qty}
+                        value={qty}
                         max={product.countInStock} 
-                        defaultValue={1}
-                        onChange={val => {
-                           console.log(`Before setQty, qty = ${qty}`)
-                           setQty(val)
-                           console.log(`After setQty, qty = ${qty}`)
-                        }}
+                        onChange={val => setProductDetail(dispatch, product.id, val)}
                      />
                   </div>       
                   <div className="product-button">
-                     <AddToCart product={product} qty={qty} />   
+                     <AddToCart />   
                   </div>         
                </div>
             </Col>

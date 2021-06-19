@@ -9,7 +9,7 @@ const { Header, Content, Footer } = Layout;
 
 
 function AllProducts() {
-  const { state: { page: { products } } } = useContext(StoreContext);
+  const { state: { page: { products } }, dispatch } = useContext(StoreContext);
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">

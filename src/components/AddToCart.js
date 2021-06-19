@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import { Button, notification } from "antd"
 import { StoreContext } from "../store"
-import { ADD_CART_ITEM } from "./utils/constants"
+import { addCartItem } from "../actions";
 
-export default function AddToCart({ product, qty }) {
-  const { dispatch } = useContext(StoreContext);
+export default function AddToCart() {
+  const { state: { cartItems, productDetail: { product, qty } }, dispatch } = useContext(StoreContext);
 
   const openNotification = () => {
     notification.open({
@@ -20,18 +20,12 @@ export default function AddToCart({ product, qty }) {
 
   const addToCart = () => {
     openNotification();
-    dispatch({
-      type: ADD_CART_ITEM,
-      payload: {
-        id: product.id,
-        name: product.name,
-        image: product.image,
-        price: product.price,
-        countInStock: product.countInStock,
-        qty,
-      },
-    });
+    addCartItem(dispatch, product, qty);
   };
+
+  useEffect(()=>{
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems])
 
 
   return (
