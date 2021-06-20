@@ -5,11 +5,13 @@ import ProductList from "../components/ProductList";
 import { useContext } from "react";
 import { StoreContext } from "../store"
 
+
 const { Header, Content, Footer } = Layout;
 
 
 function AllProducts() {
-  const { state: { page: { products } }, dispatch } = useContext(StoreContext);
+  const { state: { page: { products } } } = useContext(StoreContext);
+
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">

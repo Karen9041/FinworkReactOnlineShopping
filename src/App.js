@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home'
 import AllProducts from './pages/AllProducts'
 import Product from './pages/Product'
+import Feed from './pages/Feed'
 
 import { StoreProvider } from "./store";
 
@@ -13,7 +14,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/AllProducts" component={AllProducts} />
-          <Route path="/Product/:productId" component={Product} />
+          <Route path="/Feed" component={Feed} />
+          <Route path="/Product/:category/:productId" component={Product} />
         </Switch>
       </BrowserRouter>
     </StoreProvider>

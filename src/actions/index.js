@@ -1,12 +1,9 @@
 import {
-  SET_PAGE_CONTENT,
-  SET_NAVBAR_ACTIVEITEM,
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
   SET_PRODUCT_DETAIL,
 } from "../utils/constants";
-
-import products from "../json/products.json";
+import { getProductById } from "../api";
 
 export const addCartItem = (dispatch, product, qty) => {
   const item = {
@@ -30,11 +27,8 @@ export const removeCartItem = (dispatch, productId) => {
   });
 };
 
-export const setProductDetail = (dispatch, productId, qty) => {
-  const product = products.find(
-    x => x.id === productId
-  );
-  
+export const setProductDetail = async (dispatch, productId, qty) => {
+  const product = await getProductById(productId);
   if (qty === 0)
     dispatch({
       type: SET_PRODUCT_DETAIL,
@@ -52,16 +46,3 @@ export const setProductDetail = (dispatch, productId, qty) => {
     })
 }
 
-export const setPageContent = (dispatch, title, products) => {
-  dispatch({
-    type: SET_PAGE_CONTENT,
-    payload: {title, products},
-  });
-};
-
-export const setActiveNavItem = (dispatch, activeNavItem) => {
-  dispatch({
-    type: SET_NAVBAR_ACTIVEITEM,
-    payload: activeNavItem,
-  });
-};

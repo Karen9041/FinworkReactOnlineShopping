@@ -7,7 +7,7 @@ import { setProductDetail } from "../actions";
 export default function ProductItem({ product }) {
     const { dispatch } = useContext(StoreContext);
     return (
-        <Link to={`/Product/${product.id}`}
+        <Link to={`/Product/${product.category}/${product.id}`}
             onClick={() => {
             setProductDetail(dispatch, product.id, 1);
             }}

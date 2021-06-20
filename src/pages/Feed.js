@@ -1,24 +1,24 @@
 import { Layout } from 'antd';
 import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
-import AppIntrofuction from "../components/Introduction"
+import Feeder from "../components/Feeder";
 
 const { Header, Content, Footer } = Layout;
 
-function Home() {
+function Feed() {
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">
-        <AppHeader/>
+        <AppHeader />
       </Header>
       <Content className="layout-content">
-        <AppIntrofuction/>
+        <Feeder />
       </Content>
       <Footer className="layout-footer">
-        <AppFooter/>  
-      </Footer>      
+        <AppFooter />
+      </Footer>
     </Layout>
   );
 }
 
-export default Home;
+export default Feed;

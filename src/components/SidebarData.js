@@ -35,5 +35,10 @@ export const SidebarData = [
     title: '我要詢問',
     path: '/',
     cName: 'nav-text'
+  },
+  {
+    title: '上傳JSON',
+    path: '/Feed',
+    cName: 'nav-text'
   }
 ];

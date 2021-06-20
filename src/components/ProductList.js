@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Row, Col } from "antd";
 import ProductItem from "./ProductItem";
+import { StoreContext } from "../store";
 
-export default function ProductList({products}) {
+export default function ProductList() {
+  const { state: { page: { products } } } = useContext(StoreContext);
   return (
     <div className="Plist">
       <h1 className="Plist-title">-全部商品-</h1>
