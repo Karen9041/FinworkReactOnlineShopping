@@ -38,7 +38,7 @@ export const SidebarData = [
   },
   {
     title: '上傳JSON',
-    path: '/Feed',
+    path: '/admin/feed-products',
     cName: 'nav-text'
   }
 ];
