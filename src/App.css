@@ -531,3 +531,129 @@ body {
 .spinner {
   margin-top: 20vh;
 }
+
+/* Login/Register Form */
+.login-form,
+.register-form {
+  max-width: 30rem;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: rgb(255, 255, 255); */
+}
+
+.register-form {
+  max-width: 35rem;
+}
+
+.login-form__forgot {
+  float: left;
+  color: white;
+}
+
+.login-form__regist{
+  float: right;
+  color: white;
+  /* margin-top: -4rem; */
+}
+
+.login-form__button {
+  width: 8rem;
+  height: 3.4rem;
+  float: right;
+  margin-top: -3rem;
+  color: black;
+  background-color: #FFA858;
+  padding: 0.2rem;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Login */
+.Login{
+  padding: 4rem 0;
+}
+
+.login-inputtitle{
+  color: white;
+}
+
+.login-input{
+  background-color: #C4C4C4;
+  border-radius: 10px;
+  border: none;
+}
+
+.ant-input{
+  background-color: #C4C4C4;
+  height: 2.4rem;
+  font-size: 20px;
+  margin-left: 1rem;
+}
+
+.login-form__error-wrap {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.7rem;
+  width: 80%;
+  border: solid 1px darkred;
+  border-radius: 4px;
+}
+
+.login-form__error-title {
+  color: white;
+}
+
+.login-form__error-message {
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 0.5rem;
+  color: white;
+}
+/* Register */
+.Register{
+  padding: 4rem 0;
+}
+
+.ant-form-item-label > label{
+  color: white;
+  font-size: 30px;
+  float: left;
+}
+
+.register-input{
+  background-color: #C4C4C4;
+  border-radius: 10px;
+  border: none;
+  float: right;
+}
+
+.register-input--fixed{
+  height: 3rem;
+  padding-left: 2rem;
+}
+
+.register-form__button{
+  width: 10rem;
+  height: 3.4rem;
+  float: right;
+  margin-top: -3rem;
+  color: black;
+  background-color: #FFA858;
+  padding: 0.2rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.register-reminder{
+  color: white;
+}
+
+/* Profile */
+.Profile{
+  padding:5rem 0;
+}
+.profile-text {
+  color: white;
+}

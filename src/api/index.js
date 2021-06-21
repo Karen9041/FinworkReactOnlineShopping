@@ -23,6 +23,9 @@ const productsCollectionRef = firebase.firestore().collection("products");
 const productsDocRef = productsCollectionRef.doc("json");
 const allProductsCollectionRef = productsDocRef.collection("allProducts");
 
+//REFERENCE AUTH
+const auth = firebase.auth();
+
 export const getProductById = async (productId) => {
   // REFERENCE PRODUCTS COLLECTION
   const doc = await allProductsCollectionRef.doc(productId).get();
@@ -56,10 +59,22 @@ export const feedProducts = () => {
       ...product,
       id
     });
-    // product.id = id;  //ERROR
   })
 }
 
-export const authenticateAnonymously = () => {
-  return firebase.auth().signInAnonymously();
-};
+export const signInWithEmailPassword = async (email, password) => {
+  return await auth.signInWithEmailAndPassword(email, password);
+}
+
+export const registerWithEmailPassword = async (email, password, name) => {
+  await auth.createUserWithEmailAndPassword(email, password);
+  const user = auth.currentUser;
+  await user.updateProfile({
+    displayName: name,
+  })
+  return user;
+}
+
+export const signOut = () => {
+  auth.signOut();
+}

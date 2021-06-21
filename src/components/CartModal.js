@@ -1,16 +1,21 @@
 import { Modal, Button, InputNumber } from "antd";
 import { useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { StoreContext } from "../store"
 import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 
 export default function CartModal({ isModalVisible, toggleModal }) {
    const { state: { cartItems }, dispatch } = useContext(StoreContext);
+   const history = useHistory();
    const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
          : 0;
+   }
+
+   const checkoutHandler = () => {
+      history.push("/login?redirect=shipping");
    }
 
    useEffect(() => {
@@ -74,6 +79,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
          <Button
             className="cart-modal-btn"
             type="primary"
+            onClick={checkoutHandler}
          >
             <span >前往結帳</span>
          </Button>
