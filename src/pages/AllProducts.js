@@ -16,7 +16,7 @@ function AllProducts() {
   useEffect(() => {
     const url = window.location.pathname;
     setPage(dispatch, url, getTitle(url))
-  }, []);
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps  
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">
