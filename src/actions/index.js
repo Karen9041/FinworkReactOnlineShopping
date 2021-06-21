@@ -1,9 +1,10 @@
 import {
+  SET_PAGE_CONTENT,
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
   SET_PRODUCT_DETAIL,
 } from "../utils/constants";
-import { getProductById } from "../api";
+import { getProducts, getProductById } from "../api";
 
 export const addCartItem = (dispatch, product, qty) => {
   const item = {
@@ -46,3 +47,15 @@ export const setProductDetail = async (dispatch, productId, qty) => {
     })
 }
 
+export const setPage = async (dispatch, url) => {
+  let products = [];
+  try {
+    products = await getProducts(url);
+    dispatch({
+      type: SET_PAGE_CONTENT,
+      payload: { products },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}

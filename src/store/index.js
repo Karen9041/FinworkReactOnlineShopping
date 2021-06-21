@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import useReducerWithThunk from "use-reducer-thunk";
-// import products from "../json/products.json";
+import products from "../json/products.json";
 
 import {
   SET_PAGE_CONTENT,
@@ -18,7 +18,7 @@ let cartItems = localStorage.getItem("cartItems")
 const initialState = {
    allProducts: [],
    page: {
-     products:[],//全部商品變空
+     products,//全部商品變空products:[],
    },
    productDetail: {
      product: {},

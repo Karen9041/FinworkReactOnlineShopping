@@ -2,23 +2,28 @@ import { Layout } from 'antd';
 import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
 import ProductList from "../components/ProductList";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { StoreContext } from "../store"
-
+import { getTitle } from "../utils";
+import { setPage } from "../actions";
 
 const { Header, Content, Footer } = Layout;
 
 
 function AllProducts() {
-  const { state: { page: { products } } } = useContext(StoreContext);
+  const { state: { page: { title } }, dispatch } = useContext(StoreContext);
 
+  useEffect(() => {
+    const url = window.location.pathname;
+    setPage(dispatch, url, getTitle(url))
+  }, []);
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">
-        <AppHeader/>
+        <AppHeader title={title}/>
       </Header>
       <Content className="layout-content">
-        <ProductList products={products} />
+        <ProductList/>
       </Content>
       <Footer className="layout-footer">
         <AppFooter/>  

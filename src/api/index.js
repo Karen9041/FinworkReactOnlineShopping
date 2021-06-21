@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import jsonInfo from "../json/jsonInfo.json";
 import products from "../json/products.json";
 
 
@@ -28,6 +29,24 @@ export const getProductById = async (productId) => {
   return doc.data()
 }
 
+export const getProducts = async (url) => {
+  const collection = jsonInfo.find(element => element.url === url);
+  const collectionName = collection.name || "allProducts";
+  console.log(collectionName)
+  let jsonProducts = [];
+
+  // QUERY PRODUCTS
+  let querySnapshot;
+  if (collectionName === "allProducts")
+    querySnapshot = await allProductsCollectionRef.get();
+  else
+    querySnapshot = await allProductsCollectionRef.where("category", "==", collectionName).get();
+  querySnapshot.forEach((doc) => {
+    jsonProducts.push(doc.data());
+  });
+  return jsonProducts;
+}
+
 export const feedProducts = () => {
   products.forEach((product) => {
     const docRef = allProductsCollectionRef.doc();
@@ -37,6 +56,7 @@ export const feedProducts = () => {
       ...product,
       id
     });
+    // product.id = id;  //ERROR
   })
 }
 

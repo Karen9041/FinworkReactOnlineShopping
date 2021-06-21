@@ -1,0 +1,17 @@
+[
+   {
+      "title": "全部商品",
+      "name": "allProducts",
+      "url": "/AllProducts"
+   },
+   {
+      "title": "Cookware",
+      "name": "cack",
+      "url": "/Product/cack"
+   },
+   {
+      "title": "Feed JSON Page",
+      "name": "FeedJSONPage",
+      "url": "/admin/feed-products"
+   }
+]
