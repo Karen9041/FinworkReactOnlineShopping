@@ -1,27 +1,25 @@
 import { Layout } from "antd";
-import * as QueryString from "query-string";
-import AppHeader from "../components/Header";
+import ShippingHeader from "../components/ShippingHeader";
+import PaymentMethodCard from "../components/PaymentMethodCard";
 import AppFooter from "../components/Footer";
-import LoginCard from "../components/LoginCard";
-
-
+import Appheader from "../components/Header"
 const { Header, Content, Footer } = Layout;
 
-function Login(props) {
-  const { redirect } = QueryString.parse(props.location.search);
+function Payment() {
   return (
     <Layout className="container main-layout">
       <Header className="layout-header">
-        <AppHeader/>
+        <Appheader/>
       </Header>
       <Content className="layout-content">
-        <LoginCard redirect={redirect}/>
+        <ShippingHeader step1 step2 step3 />
+        <PaymentMethodCard />
       </Content>
       <Footer className="layout-footer">
-        <AppFooter/>  
-      </Footer>      
+        <AppFooter />
+      </Footer>
     </Layout>
   );
 }
 
-export default Login;
+export default Payment;

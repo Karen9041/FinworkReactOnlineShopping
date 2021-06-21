@@ -1,10 +1,9 @@
 import NavBar from "./NavBar";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { AiOutlineUser } from "react-icons/ai";
 import CartSummary from "./CartSummary";
+import UserInfo from "./UserInfo";
 import { Button } from 'antd';
-import { Link } from "react-router-dom";
 
 
 
@@ -28,18 +27,17 @@ export default function Header() {
                     icon={<FaInstagram 
                     size="100%" /> }
                     href="https://www.instagram.com/lun_dessert/?hl=zh-tw"/>
-                <Link to={"/"}>
-                <Button 
-                    className="header-button"
-                    type="link" 
-                    icon={<AiOutlineUser 
-                    size="100%" /> }/>
-                </Link>
                 <Button 
                     className="header-button"
                     type="link" 
                 >
-                <CartSummary />
+                    <UserInfo/>
+                </Button>
+                <Button 
+                    className="header-button header-button--fixed"
+                    type="link" 
+                >
+                    <CartSummary />
                 </Button>
             </div>
         </div>

@@ -1,24 +1,27 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
 import { WarningOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
-import { loginToFirebase } from '../actions'
+import { checkLogin, loginToFirebase, rememberLoginUser } from '../actions'
 import { StoreContext } from "../store"
 
-const LoginCard = () => {
-  const { state:{ userSignin: { loading, error } }, dispatch } = useContext(StoreContext);
+const LoginCard = ({ redirect }) => {
+  const { state:{ userSignin: { userInfo, loading, error, remember } }, dispatch } = useContext(StoreContext);
   const [form] = Form.useForm();
   const history = useHistory();
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed: ', errorInfo.errorFields[0].errors[0])
-  };
-  
   const onFinish = async (values) => {
     console.log('Received values of form: ', values);
-    const auth = await loginToFirebase(dispatch, values);
-    auth && history.push("/profile");      
+    await loginToFirebase(dispatch, values);
   };
+
+  const onChange = e => {
+    rememberLoginUser(dispatch, e.target.checked);
+  }
+
+  useEffect(() => {    
+    if( userInfo && checkLogin(dispatch) ) history.push(redirect);
+  }, [ userInfo ]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="Login">
@@ -32,8 +35,6 @@ const LoginCard = () => {
           remember: true,
         }}
         onFinish={onFinish}
-        onFihishFailed={onFinishFailed}
-        
       >
         <h3 className="login-inputtitle">帳號</h3>
         <Form.Item
@@ -76,6 +77,14 @@ const LoginCard = () => {
           />
         </Form.Item>
         <Form.Item>
+          <Form.Item
+              name="remember"
+              noStyle
+          >
+            <Checkbox onChange={onChange} checked={remember}>
+              <p className="login-form__remember">記住我</p>
+            </Checkbox>
+          </Form.Item>
           <Link className="login-form__forgot" to={"/"}>
             <p>忘記密碼？</p>
           </Link>

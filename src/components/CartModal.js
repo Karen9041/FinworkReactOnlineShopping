@@ -5,7 +5,7 @@ import { StoreContext } from "../store"
 import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 
 export default function CartModal({ isModalVisible, toggleModal }) {
-   const { state: { cartItems }, dispatch } = useContext(StoreContext);
+   const { state: { cart: { cartItems } }, dispatch } = useContext(StoreContext);
    const history = useHistory();
    const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
@@ -15,6 +15,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
    }
 
    const checkoutHandler = () => {
+      handleCancel();
       history.push("/login?redirect=shipping");
    }
 

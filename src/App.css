@@ -53,7 +53,9 @@ body {
   position: absolute;
   right: 1rem;
   top:1rem;
+  height: 4rem;
   /* position: fixed; */
+  display: flex;
 }
 
 .header-left {
@@ -67,6 +69,7 @@ body {
   height: 3rem;
   width: 3rem;
   margin: 5px;
+  border: none;
 }
 .header-shopping{
   height: 2.8rem;
@@ -75,6 +78,14 @@ body {
   color: white;
 }
 
+.header-user{
+  margin-left: -8px;
+  color: white;
+}
+
+.cart-summary-text{
+  font-size: 10px;
+}
 /* Cart */
 .ant-modal-title {
   font-weight: lighter;
@@ -532,7 +543,9 @@ body {
   margin-top: 20vh;
 }
 
-/* Login/Register Form */
+/* Login/Register/Shipping Form */
+.placeorder-card,
+.shipping-form,
 .login-form,
 .register-form {
   max-width: 30rem;
@@ -546,9 +559,21 @@ body {
   max-width: 35rem;
 }
 
+.shipping-form {
+  max-width: 40rem;
+}
+
+.placeorder-card {
+  max-width: 100vw;
+}
+.login-form__remember{
+  color: white;
+}
+
 .login-form__forgot {
   float: left;
   color: white;
+  margin-right: 10px;
 }
 
 .login-form__regist{
@@ -561,7 +586,7 @@ body {
   width: 8rem;
   height: 3.4rem;
   float: right;
-  margin-top: -3rem;
+  /* margin-top: -3rem; */
   color: black;
   background-color: #FFA858;
   padding: 0.2rem;
@@ -656,4 +681,76 @@ body {
 }
 .profile-text {
   color: white;
+}
+
+/* Checkout Steps */
+.CheckoutSteps{
+  padding-top: 4rem;
+}
+.checkout-steps {
+  font-size: 0.6rem;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+.checkout-steps > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 0.2rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 23px;
+}
+.checkout-steps > div.active {
+  border-top-color: #FFA858;
+  color: #FFA858;
+}
+
+/* PlaceOrder / Order Card */
+.card {
+  background-image: url(./img/background-c.png);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+/* Shipping */
+.shipping{
+  padding: 3rem 0;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Payment */
+/* .paymentMethod-block{
+  background-image: url(./img/background-c.png);
+} */
+.paymentMethod-group{
+  padding: 0 20px ;
+}
+.paymentMethod-select{
+  color: white;
+}
+
+/* PlaceOrder */
+.card-title{
+  color: white;
+  text-align: center;
+  background-color: #AD9494;  
+  width: 100%;
+}
+
+.card-btn{
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.placeOrder-btn{
+  background-color: #F66F51;
+  margin: 1rem;
+  height: 4rem;
+  padding-top: 0.5rem;
+  border: none;
 }
