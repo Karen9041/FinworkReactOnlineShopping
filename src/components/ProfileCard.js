@@ -33,7 +33,7 @@ const ProfileCard = () => {
       initialValues={userInfo}
     >
       <Form.Item
-        label="name: "
+        label="姓名："
         name="name"
         rules={[
           {
@@ -46,10 +46,10 @@ const ProfileCard = () => {
         ]}
         hasFeedback
       >
-        <Input placeholder={displayName} />
+        <Input placeholder={displayName} className="register-input register-input--fixed"/>
       </Form.Item>
       <Form.Item
-        label="email: "
+        label="Email"
         name="email"
         rules={[
           {
@@ -62,11 +62,11 @@ const ProfileCard = () => {
         ]}
         hasFeedback
       >
-        <Input placeholder={email} />
+        <Input placeholder={email} className="register-input register-input--fixed"/>
       </Form.Item>
       <Form.Item
         name="password"
-        label="Password"
+        label="新密碼"
         rules={[
           {
             message: "Please input your password!",
@@ -74,12 +74,12 @@ const ProfileCard = () => {
         ]}
         hasFeedback
       >
-        <Input.Password />
+        <Input.Password className="login-input"/>
       </Form.Item>
 
       <Form.Item
         name="rePassword"
-        label="Re-enter Password"
+        label="確認密碼"
         dependencies={["password"]}
         hasFeedback
         rules={[
@@ -99,25 +99,25 @@ const ProfileCard = () => {
           }),
         ]}
       >
-        <Input.Password />
+        <Input.Password className="login-input"/>
       </Form.Item>
 
       <Form.Item>
         <Button
+          style={{ marginTop: "0.8rem"}}
           type="primary"
           htmlType="submit"
           className="login-form__button"
         >
-          Submit
+          <h3>修改</h3>
         </Button>
 
         <Button
-          type="danger"
-          style={{ marginTop: "0.8rem" }}
+          style={{ marginTop: "0.8rem" ,marginRight: "20px" }}
           className="login-form__button"
           onClick={handleLogout}
         >
-          Log out
+          <h3>登出</h3>
         </Button>
       </Form.Item>
     </Form>
