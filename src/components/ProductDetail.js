@@ -22,7 +22,8 @@ function ProductDetail( ) {
                   className="Pdetail-row"
                   >
                   <Col
-                     
+                     xs={{ span: 24 }}
+                     md={{ span: 24 }}
                      lg={{ span: 12 }}
                   >
                      <img
@@ -32,6 +33,8 @@ function ProductDetail( ) {
                      />
                   </Col>
                   <Col
+                     xs={{ span: 24 }}
+                     md={{ span: 24 }}
                      lg={{ span: 12 }}
                   >
                      <div className="product-info--detail animate__animated animate__fadeIn animate__delay-1s">
