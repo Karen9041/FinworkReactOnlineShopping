@@ -1,69 +1,78 @@
 import { useContext } from "react";
-import { Row, Col } from "antd";
+import { Row, Col, Spin } from "antd";
 import { InputNumber } from "antd";
 import AddToCart from "./AddToCart"
 import { StoreContext } from "../store"
 import { setProductDetail } from "../actions";
+import { LoadingOutlined } from '@ant-design/icons';
 
 
 function ProductDetail( ) {
-   const { state: { productDetail: { product, qty} }, dispatch } = useContext(StoreContext);
-
+   const { state: { productDetail: { product, qty}, requestProducts: { loading } }, dispatch } = useContext(StoreContext);
+   const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
    return (
       <div className="PDetail">
-         <Row 
-            className="Pdetail-row"
-            >
-            <Col
-               
-               lg={{ span: 12 }}
-            >
-               <img
-                  alt=""
-                  className="product-image"
-                  src={product.image}
-               />
-            </Col>
-            <Col
-               lg={{ span: 12 }}
-            >
-               <div className="product-info--detail">
-                  <p className="product-id">
-                     商品編號：{product.id}
-                  </p>
-                  <h3 className="product-name">
-                     {product.name}
-                  </h3>
-                  
-                  <h3 className="product-price">
-                     {product.currency}
-                     &nbsp;&nbsp; ${product.price}
-                  </h3>
-                  <div className="product-reminder">
-                  <h3 className="product-reminder--underline">
-                     運送 & 付款：
-                  </h3>
-                  <p>&nbsp;運送方式：<br/>&nbsp;&nbsp; 黑貓(星期一、日無法到貨)</p>
-                  <p>&nbsp;付款方式：<br/>&nbsp;&nbsp; 信用卡ATM 虛擬帳號</p>
-                  </div>
-                  <div className="product-qty">
-                     <h3 className="product-qty--underline">
-                        數量：
-                     </h3>
-                     <InputNumber
-                        className="product-qty--input"
-                        defaultValue={qty}
-                        value={qty}
-                        max={product.countInStock} 
-                        onChange={val => setProductDetail(dispatch, product.id, val)}
-                     />
-                  </div>       
-                  <div className="product-button">
-                     <AddToCart />   
-                  </div>         
+         {loading
+            ? (
+               <div className="spinner-wrap">
+                  <Spin indicator={antIcon} className="spinner" />
                </div>
-            </Col>
-         </Row>
+            ) : (
+               <Row 
+                  className="Pdetail-row"
+                  >
+                  <Col
+                     
+                     lg={{ span: 12 }}
+                  >
+                     <img
+                        alt=""
+                        className="product-image"
+                        src={product.image}
+                     />
+                  </Col>
+                  <Col
+                     lg={{ span: 12 }}
+                  >
+                     <div className="product-info--detail">
+                        <p className="product-id">
+                           商品編號：{product.id}
+                        </p>
+                        <h3 className="product-name">
+                           {product.name}
+                        </h3>
+                        
+                        <h3 className="product-price">
+                           {product.currency}
+                           &nbsp;&nbsp; ${product.price}
+                        </h3>
+                        <div className="product-reminder">
+                        <h3 className="product-reminder--underline">
+                           運送 & 付款：
+                        </h3>
+                        <p>&nbsp;運送方式：<br/>&nbsp;&nbsp; 黑貓(星期一、日無法到貨)</p>
+                        <p>&nbsp;付款方式：<br/>&nbsp;&nbsp; 信用卡ATM 虛擬帳號</p>
+                        </div>
+                        <div className="product-qty">
+                           <h3 className="product-qty--underline">
+                              數量：
+                           </h3>
+                           <InputNumber
+                              className="product-qty--input"
+                              defaultValue={qty}
+                              value={qty}
+                              max={product.countInStock} 
+                              onChange={val => setProductDetail(dispatch, product.id, val)}
+                           />
+                        </div>       
+                        <div className="product-button">
+                           <AddToCart />   
+                        </div>         
+                     </div>
+                  </Col>
+               </Row>
+            )
+         }
          <Row
          className="Pdetail-row"
          gutter={[0, 32]}

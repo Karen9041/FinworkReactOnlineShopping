@@ -4,8 +4,14 @@ import {
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
   SET_PRODUCT_DETAIL,
+  BEGIN_PRODUCTS_FEED,
+  SUCCESS_PRODUCTS_FEED,
+  FAIL_PRODUCTS_FEED,
+  BEGIN_PRODUCTS_REQUEST,
+  SUCCESS_PRODUCTS_REQUEST,
+  FAIL_PRODUCTS_REQUEST,
 } from "../utils/constants";
-import { getProducts, getProductById } from "../api";
+import { getProducts, getProductById, feedProducts } from "../api";
 
 export const addCartItem = (dispatch, product, qty) => {
   const item = {
@@ -29,27 +35,46 @@ export const removeCartItem = (dispatch, productId) => {
   });
 };
 
+export const feedJSONToFirebase = async (dispatch) => {
+  dispatch({ type: BEGIN_PRODUCTS_FEED });
+  try {
+    await feedProducts();
+    dispatch({ type: SUCCESS_PRODUCTS_FEED });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: FAIL_PRODUCTS_FEED, payload: error });
+  }
+}
+
 export const setProductDetail = async (dispatch, productId, qty) => {
-  const product = await getProductById(productId);
-  if (qty === 0)
-    dispatch({
-      type: SET_PRODUCT_DETAIL,
-      payload: {
-        product,
-      }
-    })
-  else
-    dispatch({
-      type: SET_PRODUCT_DETAIL,
-      payload: {
-        product,
-        qty,
-      }
-    })
+  dispatch({ type: BEGIN_PRODUCTS_REQUEST });
+  try {
+    const product = await getProductById(productId);
+    if (qty === 0)
+      dispatch({
+        type: SET_PRODUCT_DETAIL,
+        payload: {
+          product,
+        }
+      })
+    else
+      dispatch({
+        type: SET_PRODUCT_DETAIL,
+        payload: {
+          product,
+          qty,
+        }
+      })    
+    dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: FAIL_PRODUCTS_REQUEST, payload: error });
+  }
 }
 
 export const setPage = async (dispatch, url, title) => {
   let products = [];
+  dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   dispatch({
     type: SET_PAGE_TITLE,
     payload: title,
@@ -58,9 +83,11 @@ export const setPage = async (dispatch, url, title) => {
     products = await getProducts(url);
     dispatch({
       type: SET_PAGE_CONTENT,
-      payload: { products },
-    });
+      payload: { title, products },
+    }); 
+    dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
   } catch (error) {
     console.log(error);
+    dispatch({ type: FAIL_PRODUCTS_REQUEST, payload: error });
   }
 }

@@ -7,6 +7,12 @@ import {
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
   SET_PRODUCT_DETAIL,
+  BEGIN_PRODUCTS_FEED,
+  SUCCESS_PRODUCTS_FEED,
+  FAIL_PRODUCTS_FEED,
+  BEGIN_PRODUCTS_REQUEST,
+  SUCCESS_PRODUCTS_REQUEST,
+  FAIL_PRODUCTS_REQUEST,
 } from "../utils/constants"
 
 export const StoreContext = createContext();
@@ -27,6 +33,14 @@ const initialState = {
      activeItem: "/",
    },
    cartItems,
+   feedProducts: {
+      loading: false,
+      error: null,
+    },
+    requestProducts: {
+      loading: false,
+      error: null,
+    }
 };
 
 function reducer(state, action) {
@@ -59,8 +73,20 @@ function reducer(state, action) {
         return { ...state, cartItems };
       case SET_PRODUCT_DETAIL:
         return { ...state, productDetail: { ...state.productDetail, ...action.payload} };
-     default:
-       return state;
+        case BEGIN_PRODUCTS_REQUEST:
+         return { ...state, requestProducts: { ...state.requestProducts, loading: true } }
+       case SUCCESS_PRODUCTS_REQUEST:
+         return { ...state, requestProducts: { ...state.requestProducts, loading: false } }
+       case FAIL_PRODUCTS_REQUEST:
+         return { ...state, requestProducts: { ...state.requestProducts, loading: false, error: action.payload } }
+       case BEGIN_PRODUCTS_FEED:
+         return { ...state, feedProducts: { ...state.feedProducts, loading: true } }
+       case SUCCESS_PRODUCTS_FEED:
+         return { ...state, feedProducts: { ...state.feedProducts, loading: false } }
+       case FAIL_PRODUCTS_FEED:
+         return { ...state, feedProducts: { ...state.feedProducts, loading: false, error: action.payload } }
+       default:
+         return state;
    }
 }
 
