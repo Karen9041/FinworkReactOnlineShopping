@@ -1,4 +1,5 @@
 import {
+  SET_PAGE_TITLE,
   SET_PAGE_CONTENT,
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
@@ -47,8 +48,12 @@ export const setProductDetail = async (dispatch, productId, qty) => {
     })
 }
 
-export const setPage = async (dispatch, url) => {
+export const setPage = async (dispatch, url, title) => {
   let products = [];
+  dispatch({
+    type: SET_PAGE_TITLE,
+    payload: title,
+  });
   try {
     products = await getProducts(url);
     dispatch({
