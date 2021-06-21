@@ -9,7 +9,7 @@ export default function ProductList() {
   const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
   return (
     <div className="Plist">
-      <h1 className="Plist-title">-全部商品-</h1>
+      <h1 className="Plist-title animate__animated animate__fadeIn">-全部商品-</h1>
       {loading
         ? (
           <div className="spinner-wrap">

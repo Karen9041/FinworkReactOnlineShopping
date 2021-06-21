@@ -27,14 +27,14 @@ function ProductDetail( ) {
                   >
                      <img
                         alt=""
-                        className="product-image"
+                        className="product-image animate__animated animate__fadeIn"
                         src={product.image}
                      />
                   </Col>
                   <Col
                      lg={{ span: 12 }}
                   >
-                     <div className="product-info--detail">
+                     <div className="product-info--detail animate__animated animate__fadeIn animate__delay-1s">
                         <p className="product-id">
                            商品編號：{product.id}
                         </p>

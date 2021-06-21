@@ -10,19 +10,19 @@ export default function Introduction() {
                 <img
                     alt="LOGO"
                     src={LOGO}
-                    className="Intro-LOGO"
+                    className="Intro-LOGO animate__animated animate__fadeIn"
                 />
-                <div className="Intro-info">
-                    <h1 className="Intro-name">
+                <div className="Intro-info animate__animated animate__fadeIn animate__delay-1s">
+                    <h1 className="Intro-name animate__animated animate__fadeIn animate__delay-1s">
                         工典甜點
                     </h1>
-                    <h3 className="Intro-slogan">
+                    <h3 className="Intro-slogan animate__animated animate__fadeIn animate__delay-1s">
                         我是黃郁倫，我只做好貨
                     </h3>
                 </div>
                 <Link to={`/AllProducts`} className="product-link">
                     <Button 
-                        className="Intro-Button"
+                        className="Intro-Button animate__animated animate__fadeIn animate__delay-1s"
                         ghost
                         >
                         全部商品

@@ -360,9 +360,9 @@ body {
 .product{
   padding: 0;
   text-align: center;
-  background-color: black;
+  background-color: #171717;
   color: white;
-  border: rgb(0, 0, 0) solid 1px;
+  border: #171717 solid 1px;
 }
 
 /* ProductDetail */
