@@ -1,4 +1,5 @@
 @import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
 
 /*Container */
 .container {
@@ -12,14 +13,17 @@
 /* globle-setting */
 h1{
   font-size: 40px;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 h3{
   font-size: 30px;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 p{
   font-size: 23px;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 /* general */
 body {
